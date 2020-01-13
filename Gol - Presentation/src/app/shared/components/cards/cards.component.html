@@ -1,0 +1,35 @@
+<div class="o-title pt-5">
+  <h4>Discovery the new GOL</h4>
+  <p>New times in air</p>
+</div>
+
+
+<div class="o-cards d-flex justify-content-between pb-5">
+    <div class="o-card"  [routerLink]="[ '/new-passager' ]">
+      <div class="o-foto">
+        <img src="assets/img/icon_passager.png">
+      </div>
+      <div class="o-division"></div>
+      <div class="o-info">
+        <span class="is-link">Add new passager</span> chose the airplane or just add
+      </div>
+    </div>
+    <div class="o-card" [routerLink]="[ '/airplanes' ]">
+        <div class="o-foto">
+          <img src="assets/img/icon-passagers.png">
+        </div>
+        <div class="o-division"></div>
+        <div class="o-info">
+            <span class="is-link" >See all airplanes</span> you can update or find your trip
+        </div>
+    </div>
+    <div class="o-card" [routerLink]="[ '/new-airplane' ]">
+        <div class="o-foto">
+          <img src="assets/img/icon-airplane.png">
+        </div>
+        <div class="o-division"></div>
+        <div class="o-info">          
+            <span class="is-link" >Add new Airplane</span> to new trips and new forms to fly
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="p-5">
+  <h2>
+    Passagers 
+    <button  [routerLink]="['/new-passager']" title="New" class="btn btn-success">New +</button>
+  </h2>
+  
+
+  <div class='text-danger' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+  <div class="page-size">
+    <div class="panel panel-default">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="20%">Name</th>
+            <th width="20%">Type</th>
+            <th width="20%">Airplane Code</th>
+            <th width="20%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let passager of passagers'>
+            <td>{{ passager.name }}</td>
+            <td>{{ passager.type  }}</td>
+            <td>{{ passager.idAirplane  }}</td>
+            <td>                 
+              <button *ngIf="passager.idAirplane" [routerLink]="['/flight-passagers', passager.idAirplane]" title="See Flight" class="btn btn-primary mr-2">
+                Flight
+              </button>
+              <button [routerLink]="['/edit-passager', passager.id]" title="Edit Passager" class="btn btn-primary mr-2">
+                Edit
+              </button>
+              <button (click)="excluirPassager(passager.id)" title="Delete Passager" class="btn btn-danger">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

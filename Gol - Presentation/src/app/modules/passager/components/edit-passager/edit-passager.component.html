@@ -1,0 +1,79 @@
+<div class="p-5 ">
+  <h2>Edit Passager</h2>
+  <h4>Fill with your informations</h4>
+  <hr />
+
+
+  <form novalidate  #passagerForm="ngForm" (ngSubmit)="editarPassager(passagerForm)">
+
+    <div class="form-horizontal">
+
+      <div class="alert alert-danger" *ngIf="errors.length > 0">
+        <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+        <ul>
+          <li *ngFor="let error of errors">{{ error }}</li>
+        </ul>
+      </div>
+
+      <input class="form-control" id="id" name="id" type="hidden" />
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="name">Name</label>
+        <div class="col-md-10">
+          <input class="form-control"          
+          [ngClass]="{'is-invalid': name.invalid && name.touched, 'is-valid': name.valid && name.touched}"
+          #name="ngModel"
+          required
+          maxlength="50"
+          minlength="2"
+          id="name" name="name" 
+          [(ngModel)]="passager.name" type="text" placeholder="Name (required)" />
+          <span class="invalid-feedback" *ngIf="name.errors?.required && name.touched" >Name is required </span>
+          <span class="invalid-feedback" *ngIf="name.errors?.minlength && name.touched" >Name must be beteween 2 and 50 characters </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="type">Type</label>
+        <div class="col-md-10">
+          <input class="form-control"          
+          [ngClass]="{'is-invalid': type.invalid && type.touched, 'is-valid': type.valid && type.touched}"
+          #type="ngModel"
+          required
+          maxlength="50"
+          minlength="2"
+          id="type" name="type" 
+          [(ngModel)]="passager.type" type="text" placeholder="Type (required)" />
+          <span class="invalid-feedback" *ngIf="type.errors?.required && type.touched" >Type is required </span>
+          <span class="invalid-feedback" *ngIf="type.errors?.minlength && type.touched" >Type must be beteween 2 and 50 characters </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label class="col-md-2 control-label">Airplane</label>
+          <div class="col-md-10">
+            <select class="form-control" [(ngModel)]="passager.idAirplane" name="idAirplane" id="idAirplane">
+              <option value="">Selecione</option>
+              <option *ngFor="let airplane of airplanes"  value="{{airplane.id}}">{{ airplane.name }}</option>
+            </select>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="seat">Seat</label>
+        <div class="col-md-10">
+          <input class="form-control"          
+          [ngClass]="{'is-invalid': seat.invalid && seat.touched, 'is-valid': seat.valid && seat.touched}"
+          #seat="ngModel"
+          id="seat" name="seat" 
+          [(ngModel)]="passager.seat" type="text" placeholder="Seat" />
+        </div>
+      </div>
+
+      <button class="btn btn-primary ml-3" [routerLink]="['/passagers']" >Back</button>
+      <button class="btn btn-success ml-3">Send</button>
+
+    </div>
+
+  </form>
+</div>

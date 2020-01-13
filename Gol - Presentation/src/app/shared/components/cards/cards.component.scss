@@ -1,0 +1,58 @@
+.o-title{
+    text-align: center;
+    padding: 10px 0;
+    h4 {
+        font-size: 2.5em;
+        text-transform: uppercase;
+        color: #ff6900;
+        
+    }
+    p{
+        color: rgba(0,0,0,.7);
+        font-size: 1.5em
+    }
+}
+
+
+.o-cards{
+    padding: 25px;
+    .o-card{
+        cursor: pointer;
+        width: 30%;
+        padding: 10px;
+        text-align: center;
+        .o-foto img {
+            max-width: 150px;
+            max-height: 150px;
+        }
+        .o-division{
+            margin: 10px auto;
+            width: 40%;
+            height: 4px;
+            border-radius: 5px;
+            background: #ff6900;
+
+        }
+        .o-info{
+            .is-link{
+                color: #ff6900;
+            }
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: rgba(0,0,0,.5);
+
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .o-cards{
+        flex-wrap: wrap;
+        .o-card{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}
+

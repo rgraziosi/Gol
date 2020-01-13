@@ -1,0 +1,39 @@
+<div class="p-5">
+
+  <div class='alert alert-danger' *ngIf='errors.length > 0'>
+    <p class="m-0" *ngFor="let erro of errors">{{erro}}</p>
+  </div>
+
+  <h2>
+    Airplanes 
+    <button  [routerLink]="['/new-airplane']" title="New" class="btn btn-success">New +</button>
+  </h2>  
+
+  <div class="page-size">
+    <div class="panel panel-default">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="35%">Name</th>
+            <th width="35%">Type</th>
+            <th width="30%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let airplane of airplanes'>
+            <td>{{ airplane.name }}</td>
+            <td>{{ airplane.type  }}</td>
+            <td>
+              <button [routerLink]="['/edit-airplane', airplane.id]" title="Edit Airplane" class="btn btn-primary mr-2">
+                Edit
+              </button>
+              <button (click)="excluirAirplane(airplane.id)" title="Delete Airplane" class="btn btn-danger">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

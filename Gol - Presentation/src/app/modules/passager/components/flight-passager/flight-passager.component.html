@@ -1,0 +1,32 @@
+<div class="p-5">
+  <h2>
+    Passagers by Airplane
+    <button  [routerLink]="['/passagers']" title="New" class="btn btn-primary">Back</button>
+  </h2>
+
+
+  <h4>Airplane: {{airplane.name}}</h4>
+  <h4>Type: {{airplane.type}}</h4>
+  
+
+  <div class='text-danger' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+  <div class="page-size">
+    <div class="panel panel-default">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="20%">Name</th>
+            <th width="20%">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let passager of passagers'>
+            <td>{{ passager.name }}</td>
+            <td>{{ passager.type  }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

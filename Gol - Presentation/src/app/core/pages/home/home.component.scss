@@ -1,0 +1,17 @@
+.o-banner {
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .o-banner-content{
+        text-transform: uppercase;
+        color: #FFF;
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px #000;
+        max-width: 80%;
+        text-align: center;
+    }
+}
